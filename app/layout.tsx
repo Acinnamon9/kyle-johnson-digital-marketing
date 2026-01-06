@@ -26,6 +26,7 @@ export default function RootLayout({
         <html lang="en" suppressHydrationWarning>
             <body
                 className={`${oswald.variable} ${inter.variable} antialiased`}
+                suppressHydrationWarning
             >
                 {children}
             </body>

@@ -25,7 +25,7 @@ export default function Pricing() {
     ];
 
     return (
-        <section className="py-24 bg-black">
+        <section id="pricing" className="py-24 bg-black">
             <div className="container mx-auto px-6">
                 <h2 className="section-title mb-16 text-center text-4xl font-bold uppercase text-white">
                     Simple, Transparent Pricing
@@ -36,8 +36,8 @@ export default function Pricing() {
                         <div
                             key={index}
                             className={`flex flex-col p-8 rounded-2xl border ${plan.highlight
-                                    ? 'border-primary bg-zinc-900 shadow-[0_0_30px_rgba(255,87,34,0.15)]'
-                                    : 'border-white/10 bg-zinc-900/50'
+                                ? 'border-primary bg-zinc-900 shadow-[0_0_30px_rgba(255,87,34,0.15)]'
+                                : 'border-white/10 bg-zinc-900/50'
                                 }`}
                         >
                             <h3 className="text-2xl font-bold uppercase mb-6 font-display">{plan.name}</h3>
@@ -55,8 +55,8 @@ export default function Pricing() {
                                 href="https://calendar.app.google/qYADTJYY4dFnyhnt6"
                                 target="_blank"
                                 className={`w-full py-4 text-center text-sm font-bold uppercase tracking-wider rounded transition-colors ${plan.highlight
-                                        ? 'bg-primary text-white hover:bg-white hover:text-black'
-                                        : 'bg-white text-black hover:bg-gray-200'
+                                    ? 'bg-primary text-white hover:bg-white hover:text-black'
+                                    : 'bg-white text-black hover:bg-gray-200'
                                     }`}
                             >
                                 Book Demo

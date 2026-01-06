@@ -22,7 +22,7 @@ export default function Features() {
     ];
 
     return (
-        <section className="py-24 bg-zinc-900 border-t border-b border-white/5">
+        <section id="features" className="py-24 bg-zinc-900 border-t border-b border-white/5">
             <div className="container mx-auto px-6">
                 <h2 className="section-title mb-16 text-center text-4xl font-bold uppercase text-white">
                     What You Get
@@ -33,8 +33,8 @@ export default function Features() {
                         <div
                             key={index}
                             className={`p-6 rounded-2xl border transition-all duration-300 ${feature.highlight
-                                    ? 'bg-primary/10 border-primary/50 hover:bg-primary/20'
-                                    : 'bg-black/40 border-white/5 hover:border-white/20'
+                                ? 'bg-primary/10 border-primary/50 hover:bg-primary/20'
+                                : 'bg-black/40 border-white/5 hover:border-white/20'
                                 }`}
                         >
                             <div className={`mb-4 w-14 h-14 rounded-full flex items-center justify-center ${feature.highlight ? 'bg-primary' : 'bg-white/10'

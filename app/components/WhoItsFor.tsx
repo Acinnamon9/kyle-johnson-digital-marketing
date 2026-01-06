@@ -1,6 +1,6 @@
 export default function WhoItsFor() {
     return (
-        <section className="py-24 bg-primary text-white">
+        <section id="who-its-for" className="py-24 bg-primary text-white">
             <div className="container mx-auto px-6 text-center">
                 <h2 className="text-4xl md:text-5xl font-bold uppercase mb-8 text-black">
                     Built for High-Leverage Operators
