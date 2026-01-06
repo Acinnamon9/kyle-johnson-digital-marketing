@@ -1,23 +1,40 @@
 @import "tailwindcss";
 
 :root {
-  --background: #111111;
+  --background: #000000;
   --foreground: #ffffff;
-  --brand-gold: #D4AF37;
-  --brand-gold-hover: #C5A028;
+  --primary: #FF5722;
+  /* Deep Orange */
+  --accent-gold: #FFC107;
+  --accent-red: #F44336;
+  --accent-yellow: #FFEB3B;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --color-brand-gold: var(--brand-gold);
-  --color-brand-gold-hover: var(--brand-gold-hover);
-  --font-sans: var(--font-inter);
-  --font-serif: var(--font-playfair);
+@theme {
+  --color-primary: var(--primary);
+  --color-accent-gold: var(--accent-gold);
+  --color-accent-red: var(--accent-red);
+  --color-accent-yellow: var(--accent-yellow);
+
+  --font-display: 'Oswald', sans-serif;
+  --font-body: 'Inter', sans-serif;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-inter), sans-serif;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
 }

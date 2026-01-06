@@ -1,32 +1,29 @@
-import Navbar from '@/app/components/Navbar';
-import Hero from '@/app/components/Hero';
-import Services from '@/app/components/Services';
-import WhyUs from '@/app/components/WhyUs';
-import Testimonials from '@/app/components/Testimonials';
-import Pricing from '@/app/components/Pricing';
-import Funding from '@/app/components/Funding';
-import Footer from '@/app/components/footer';
+import Navbar from './components/Navbar';
+import Hero from './components/Hero';
+import SocialProof from './components/SocialProof';
+import Explainer from './components/Explainer';
+import HowItWorks from './components/HowItWorks';
+import Features from './components/Features';
+import Pricing from './components/Pricing';
+import WhoItsFor from './components/WhoItsFor';
+import InfluencerVideo from './components/InfluencerVideo';
+import CTA from './components/CTA';
+import Footer from './components/Footer';
 
 export default function Home() {
-  return (
-    <main className="min-h-screen bg-black selection:bg-brand-gold selection:text-black">
-      <Navbar />
-
-      {/* Hero Section */}
-      <Hero />
-
-      {/* Main Content Sections with Alternating Backgrounds */}
-      <Services />
-
-      <WhyUs />
-
-      <Testimonials />
-
-      <Pricing />
-
-      <Funding />
-
-      <Footer />
-    </main>
-  );
+    return (
+        <main className="min-h-screen bg-black text-white selection:bg-primary selection:text-white">
+            <Navbar />
+            <Hero />
+            <SocialProof />
+            <Explainer />
+            <HowItWorks />
+            <Features />
+            <Pricing />
+            <WhoItsFor />
+            <InfluencerVideo />
+            <CTA />
+            <Footer />
+        </main>
+    );
 }

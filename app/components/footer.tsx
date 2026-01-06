@@ -1,69 +1,32 @@
 import Link from 'next/link';
-import { Facebook, Instagram, Linkedin, Twitter } from 'lucide-react';
 
 export default function Footer() {
-  const currentYear = new Date().getFullYear();
+    return (
+        <footer className="py-12 bg-black border-t border-white/10 text-gray-400">
+            <div className="container mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+                <div className="text-center md:text-left">
+                    <h4 className="text-white font-bold uppercase mb-2">Kyle Johnson Digital Marketing</h4>
+                    <p className="mb-1">100 S 4th St, Suite 550</p>
+                    <p className="mb-4">St. Louis, MO 63102</p>
+                    <a href="mailto:contact@kljj365.com" className="hover:text-primary transition-colors">
+                        contact@kljj365.com
+                    </a>
+                </div>
 
-  return (
-    <footer className="bg-black text-white pt-20 pb-10 border-t border-zinc-900">
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
-
-          {/* Brand Column */}
-          <div className="col-span-1 md:col-span-1">
-            <h3 className="text-xl font-serif font-bold mb-6 tracking-tight">
-              CONSULTING <span className="text-brand-gold">UPSCALE</span>
-            </h3>
-            <p className="text-zinc-500 text-sm leading-relaxed mb-6">
-              Where structure unlocks capital. We build the foundation for your business's financial success.
-            </p>
-            <div className="flex space-x-4">
-              {[Facebook, Instagram, Twitter, Linkedin].map((Icon, i) => (
-                <a key={i} href="#" className="text-zinc-500 hover:text-brand-gold transition-colors">
-                  <Icon className="w-5 h-5" />
-                </a>
-              ))}
+                <div className="text-center md:text-right">
+                    <p className="mb-4">@kljj365</p>
+                    <Link
+                        href="https://calendar.app.google/qYADTJYY4dFnyhnt6"
+                        target="_blank"
+                        className="inline-block bg-white text-black px-6 py-2 font-bold uppercase text-sm hover:bg-primary hover:text-white transition-colors"
+                    >
+                        Book Demo
+                    </Link>
+                </div>
             </div>
-          </div>
-
-          {/* Quick Links */}
-          <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest mb-6 text-brand-gold">Company</h4>
-            <ul className="space-y-4 text-sm text-zinc-400">
-              <li><Link href="#" className="hover:text-white transition-colors">About Us</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Careers</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Contact</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Partners</Link></li>
-            </ul>
-          </div>
-
-          {/* Services */}
-          <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest mb-6 text-brand-gold">Services</h4>
-            <ul className="space-y-4 text-sm text-zinc-400">
-              <li><Link href="#" className="hover:text-white transition-colors">Business Credit</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Funding</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Corporate Kits</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Consultations</Link></li>
-            </ul>
-          </div>
-
-          {/* Legal */}
-          <div>
-            <h4 className="text-sm font-bold uppercase tracking-widest mb-6 text-brand-gold">Legal</h4>
-            <ul className="space-y-4 text-sm text-zinc-400">
-              <li><Link href="#" className="hover:text-white transition-colors">Privacy Policy</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Terms of Service</Link></li>
-              <li><Link href="#" className="hover:text-white transition-colors">Disclaimer</Link></li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="border-t border-zinc-900 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-zinc-600">
-          <p>&copy; {currentYear} Consulting Upscale. All rights reserved.</p>
-          <p className="mt-2 md:mt-0">Designed for Elite Entrepreneurs</p>
-        </div>
-      </div>
-    </footer>
-  );
+            <div className="container mx-auto px-6 mt-12 pt-8 border-t border-white/5 text-center text-sm opacity-50">
+                &copy; {new Date().getFullYear()} Kyle Johnson Digital Marketing. All rights reserved.
+            </div>
+        </footer>
+    );
 }
