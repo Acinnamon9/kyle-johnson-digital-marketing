@@ -25,7 +25,7 @@ export default function Footer() {
                 </div>
             </div>
             <div className="container mx-auto px-6 mt-12 pt-8 border-t border-white/5 text-center text-sm opacity-50">
-                &copy; {new Date().getFullYear()} Kyle Johnson Digital Marketing. All rights reserved.
+                &copy; <span suppressHydrationWarning>{new Date().getFullYear()}</span> Kyle Johnson Digital Marketing. All rights reserved.
             </div>
         </footer>
     );
