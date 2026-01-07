@@ -1,53 +1,33 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Widget Test</title>
+    <title>Root Widget Test</title>
 </head>
-<body style="background-color: #f0f0f0; font-family: sans-serif;">
-    <h1>Standalone Widget Test</h1>
-    <p>The widget should appear below:</p>
-    <hr>
-    
-    <!-- Widget Container -->
-    <my-widget></my-widget>
 
-    <!-- Load the widget script -->
+<body style="background-color: #f0f0f0; font-family: sans-serif; margin: 0; padding: 2rem;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <h1>Widget Test (From Root)</h1>
+        <p>This file tests the widget stored in the <code>dist/</code> folder.</p>
+        <hr style="margin: 2rem 0;">
+
+        <!-- Widget Instance -->
+        <my-widget></my-widget>
+    </div>
+
+    <!-- Script points to dist -->
     <script src="./dist/react-widget-uv.js"></script>
-    
+
     <!-- 
-       Note: The widget's Shadow DOM isolates styles.
-       The widget is configured to look for './nextjs.css' relative to itself (or the page).
-       Ensure 'nextjs.css' is in the same directory as this HTML file or the script depending on how it's served.
-       For this test, we assume test-widget.html is in root and dist/ is accessible.
-       However, the widget thinks './nextjs.css' is relative to the *document* or the *script* depending on implementation.
-       I implemented it as `link.href = './nextjs.css'` which is relative to the *document* (this HTML file).
-       So we need to make sure 'nextjs.css' is served at './nextjs.css' relative to this file.
-       
-       But wait, the files are in 'dist/'. 
-       If I open 'test-widget.html' in the root, './nextjs.css' looks for 'nextjs.css' in the root.
-       It is in 'dist/nextjs.css'.
-       
-       Ideally, the widget should know where its resources are.
-       For this simple test, I will COPY the css to root or adjust the widget to look in dist?
-       No, let's just create the test file expecting the user to copy assets or serve root.
-       
-       Actually, a better test setup:
-       <link rel="stylesheet" href="./dist/nextjs.css"> (If I wasn't using Shadow DOM)
-       
-       Since I am using Shadow DOM and manual injection:
-       The widget injects `<link href="./nextjs.css">`.
-       This is relative to the PAGE url.
-       If page is `.../test-widget.html`, it looks for `.../nextjs.css`.
-       So I should put this HTML file in `dist/` folder for it to work out of the box?
-       OR I should have compiled the widget to know its path (import.meta.url).
-       
-       Let's place this file in ROOT, but telling the user that for the CSS to load, 
-       they currently need `nextjs.css` next to the HTML file OR update the widget code to use absolute paths/CDN.
-       
-       For now, I'll create `dist/test.html` instead so it works out of the box with the relative link.
+       NOTE: The widget currently injects <link href="./nextjs.css">.
+       For this to work in root, nextjs.css must be in root, 
+       OR you can copy it here:
     -->
+    <script>
+        console.log("Widget test page loaded. Ensure nextjs.css is in the same folder if styles don't appear.");
+    </script>
 </body>
+
 </html>

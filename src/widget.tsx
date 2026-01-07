@@ -9,32 +9,28 @@ import '../app/globals.css';
 
 class MyWidget extends HTMLElement {
     connectedCallback() {
-        // secure the shadow DOM
         const shadow = this.attachShadow({ mode: 'open' });
 
         // Create a mount point
         const mountPoint = document.createElement('div');
+        // Give it 'body' styles since there is no body inside Shadow DOM
+        mountPoint.style.minHeight = '100vh';
+        mountPoint.style.backgroundColor = 'black';
+        mountPoint.style.color = 'white';
+        mountPoint.style.fontFamily = "'Inter', sans-serif";
         shadow.appendChild(mountPoint);
 
-        // Inject styles
-        // NOTE: In production, you might want to point this to a hosted URL or the built file.
-        // For local testing, we assume the CSS is in the same directory or passed via props.
-        // When using @tailwindcss/vite, it generates a CSS file. We need to link it.
-        // Since the filename includes a hash by default, we'll need to strictly reference it
-        // or rely on user supplying the CSS.
-        // HOWEVER, for a single file widget, including styles is tricky without a loader that inlines them.
-        // For now, we'll try to link to 'style.css' which we'll configure Vite to output.
-
+        // 1. Inject Theme CSS
         const link = document.createElement('link');
         link.rel = 'stylesheet';
-        // This assumes the CSS file is served from the same location as the JS file
-        // Or we can default to a known location.
-        // Getting the script's src to resolve the css path relative to it:
-        const scriptUrl = import.meta.url; // This works in modules
-        // If bundled as IIFE, import.meta might not work the same depending on target.
-        // So let's try a simpler approach: relative path ./nextjs.css
         link.href = './nextjs.css';
         shadow.appendChild(link);
+
+        // 2. Inject Google Fonts (Oswald and Inter)
+        const fontLink = document.createElement('link');
+        fontLink.rel = 'stylesheet';
+        fontLink.href = 'https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Oswald:wght@400;700&display=swap';
+        shadow.appendChild(fontLink);
 
         const root = ReactDOM.createRoot(mountPoint);
         root.render(
