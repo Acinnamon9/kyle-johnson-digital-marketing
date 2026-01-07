@@ -7,11 +7,11 @@ html {
 :root {
   --background: #000000;
   --foreground: #ffffff;
-  --primary: #FF5722;
+  --primary: #ff5722;
   /* Deep Orange */
-  --accent-gold: #FFC107;
-  --accent-red: #F44336;
-  --accent-yellow: #FFEB3B;
+  --accent-gold: #ffc107;
+  --accent-red: #f44336;
+  --accent-yellow: #ffeb3b;
 }
 
 @theme {
@@ -20,8 +20,8 @@ html {
   --color-accent-red: var(--accent-red);
   --color-accent-yellow: var(--accent-yellow);
 
-  --font-display: 'Oswald', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-display: "Oswald", sans-serif;
+  --font-body: "Inter", sans-serif;
 }
 
 body {
@@ -41,4 +41,23 @@ h6 {
   font-family: var(--font-display);
   font-weight: 700;
   text-transform: uppercase;
+}
+
+/* Custom Animation for Hero Gradient */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.hero-gradient {
+  background: linear-gradient(-45deg, #000000, #1a1a1a, #000000, #110e0e);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
 }
